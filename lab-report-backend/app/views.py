@@ -32,7 +32,7 @@ class UploadReportView(APIView):
             if not line or not any(char.isdigit() for char in line):
                 continue
 
-            match = re.match(r'^([A-Z \-/(),]+)\s+([\d.]+)\s+([a-zA-Z/%μ]+)\s+([\d.\-–]+[\s\-toTO]*[\d.]+)?', line)
+            match = re.match(r'^([A-Z \-/(),]+)\s+([\d.]+)\s+([a-zA-Z/%μ]+)\s+([\d.\-–]+[\s\-toTO]*[\d.]+)?', line)  # Regex to match lab result format
             if match:
                 parameter = match.group(1).strip()
                 value = float(match.group(2))
@@ -52,7 +52,7 @@ class UploadReportView(APIView):
 
     def flag_attention(self, value, range_):                                    # Check if the value is within the reference range
         try:
-            match = re.search(r'(\d+\.?\d*)\s*[-–toTO]+\s*(\d+\.?\d*)', range_)
+            match = re.search(r'(\d+\.?\d*)\s*[-–toTO]+\s*(\d+\.?\d*)', range_)      # Regex to find numeric ranges
             if match:
                 low = float(match.group(1))
                 high = float(match.group(2))
