@@ -38,7 +38,7 @@ A full-stack web application that allows users to upload lab reports (PDF or ima
 ### 🔧 Backend Setup
 
 ```bash
-cd django-backend
+cd lab-report-backend
 python -m venv env
 source env/bin/activate  # On Windows: env\Scripts\activate
 pip install -r requirements.txt
@@ -73,7 +73,7 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ```
 Lab-Report-App/
-├── django-backend/         # Django backend (API, OCR, DB)
+├── lab-report-backend/         # Django backend (API, OCR, DB)
 │   └── app/                # Lab report logic and views
 ├── lab-report-frontend/    # React frontend (UI + charts)
 │   └── src/                # React components
